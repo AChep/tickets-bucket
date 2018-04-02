@@ -1,7 +1,7 @@
 package com.artemchep.ticketsbucket.main
 
 import android.util.Log
-import com.artemchep.ticketsbucket.interfaces.QrTicket
+import com.artemchep.ticketsbucket.interfaces.IQrTicket
 import com.google.firebase.firestore.*
 
 
@@ -28,7 +28,7 @@ class MainPresenter : MainPresenterBase {
         }
 
         val tickets = value.documents.map {
-            object : QrTicket {}
+            object : IQrTicket {}
         }
         processTickets(tickets)
     }
@@ -51,7 +51,7 @@ class MainPresenter : MainPresenterBase {
         registrations.clear()
     }
 
-    private fun processTickets(tickets: List<QrTicket>) {
+    private fun processTickets(tickets: List<IQrTicket>) {
         view!!.showTickets(tickets)
     }
 

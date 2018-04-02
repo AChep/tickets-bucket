@@ -3,7 +3,7 @@ package com.artemchep.ticketsbucket.interfaces
 /**
  * @author Artem Chepurnoy
  */
-interface QrTicketCodec<in T : QrTicket> {
+interface IQrTicketCodec<in T : IQrTicket> {
 
     fun encode(ticket: T) : String
 

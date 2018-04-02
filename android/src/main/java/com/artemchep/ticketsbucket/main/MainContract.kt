@@ -2,7 +2,7 @@ package com.artemchep.ticketsbucket.main
 
 import com.artemchep.mvp.IPresenter
 import com.artemchep.mvp.IView
-import com.artemchep.ticketsbucket.interfaces.QrTicket
+import com.artemchep.ticketsbucket.interfaces.IQrTicket
 
 /**
  * @author Artem Chepurnoy
@@ -18,7 +18,7 @@ interface MainPresenterBase : IPresenter<MainPresenterBase, MainViewBase> {
  */
 interface MainViewBase : IView<MainViewBase, MainPresenterBase> {
 
-    fun showTickets(tickets: List<QrTicket>)
+    fun showTickets(tickets: List<IQrTicket>)
 
     fun showTicketsScanner()
 

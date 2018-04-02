@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.artemchep.ticketsbucket.R
-import com.artemchep.ticketsbucket.interfaces.QrTicket
+import com.artemchep.ticketsbucket.interfaces.IQrTicket
 
 /**
  * @author Artem Chepurnoy
  */
-class TicketsAdapter(val tickets: MutableList<QrTicket>) : RecyclerView.Adapter<TicketsAdapter.Holder>() {
+class TicketsAdapter(val tickets: MutableList<IQrTicket>) : RecyclerView.Adapter<TicketsAdapter.Holder>() {
 
     /**
      * @author Artem Chepurnoy

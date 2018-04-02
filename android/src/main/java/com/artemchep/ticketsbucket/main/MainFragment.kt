@@ -10,7 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.artemchep.ticketsbucket.R
-import com.artemchep.ticketsbucket.interfaces.QrTicket
+import com.artemchep.ticketsbucket.interfaces.IQrTicket
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.fragment_passengers.*
@@ -22,7 +22,7 @@ class MainFragment : Fragment(), MainViewBase,
         View.OnClickListener,
         Toolbar.OnMenuItemClickListener {
 
-    private val tickets = ArrayList<QrTicket>()
+    private val tickets = ArrayList<IQrTicket>()
 
     override lateinit var presenter: MainPresenterBase
 
@@ -66,7 +66,7 @@ class MainFragment : Fragment(), MainViewBase,
         return true
     }
 
-    override fun showTickets(tickets: List<QrTicket>) {
+    override fun showTickets(tickets: List<IQrTicket>) {
         this.tickets.apply {
             clear()
             addAll(tickets)
