@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android/android.iml" filepath="$PROJECT_DIR$/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-jvm/commons-jvm.iml" filepath="$PROJECT_DIR$/commons-jvm/commons-jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tickets-bucket.iml" filepath="$PROJECT_DIR$/tickets-bucket.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_support"
+        android:icon="@drawable/ic_card_giftcard"
+        android:title="@string/action_support"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_archive"
+        android:icon="@drawable/ic_archive"
+        android:title="@string/action_archive"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_information"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
+
+</menu>

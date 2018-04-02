@@ -1,0 +1,61 @@
+<resources>
+
+    <!--
+        Light
+        -->
+    <!-- Base application theme. -->
+    <style name="AppThemeLight_Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Api dependent changes go here -->
+    </style>
+
+    <style name="AppThemeLight" parent="AppThemeLight_Base">
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimaryDark">@color/light_primary_dark</item>
+        <item name="colorAccent">@color/light_accent</item>
+        <item name="colorControlActivated">@color/light_activated</item>
+    </style>
+
+    <style name="AppThemeLight.NoActionBar_Base" parent="AppThemeLight">
+        <!-- Api dependent changes go here -->
+    </style>
+
+    <style name="AppThemeLight.NoActionBar" parent="AppThemeLight.NoActionBar_Base">
+        <!-- Customize theme here -->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeLight.NoActionBar.Translucent" parent="AppThemeLight.NoActionBar">
+        <!-- Customize theme here -->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppThemeLight.Dialog" parent="AppThemeLight.NoActionBar.Translucent">
+        <!-- Customize theme here -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+
+    <!--
+        Dark
+        -->
+    <!-- Base application theme. -->
+    <style name="AppThemeDark_Base" parent="Theme.AppCompat">
+        <!-- Api dependent changes go here -->
+    </style>
+
+    <style name="AppThemeDark" parent="AppThemeDark_Base">
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimaryDark">@color/light_primary_dark</item>
+        <item name="colorAccent">@color/light_accent</item>
+        <item name="colorControlActivated">@color/light_activated</item>
+    </style>
+
+</resources>
