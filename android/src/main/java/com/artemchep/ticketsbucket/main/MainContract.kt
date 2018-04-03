@@ -7,16 +7,18 @@ import com.artemchep.ticketsbucket.interfaces.IQrTicket
 /**
  * @author Artem Chepurnoy
  */
-interface MainPresenterBase : IPresenter<MainPresenterBase, MainViewBase> {
+interface IMainPresenter : IPresenter<IMainPresenter, IMainView> {
 
     fun scanTicket()
+
+    fun scanTicket(contents : String)
 
 }
 
 /**
  * @author Artem Chepurnoy
  */
-interface MainViewBase : IView<MainViewBase, MainPresenterBase> {
+interface IMainView : IView<IMainView, IMainPresenter> {
 
     fun showTickets(tickets: List<IQrTicket>)
 

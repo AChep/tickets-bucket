@@ -1,5 +1,6 @@
 package com.artemchep.ticketsbucket.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
@@ -18,13 +19,13 @@ import kotlinx.android.synthetic.main.fragment_passengers.*
 /**
  * @author Artem Chepurnoy
  */
-class MainFragment : Fragment(), MainViewBase,
+class MainFragment : Fragment(), IMainView,
         View.OnClickListener,
         Toolbar.OnMenuItemClickListener {
 
     private val tickets = ArrayList<IQrTicket>()
 
-    override lateinit var presenter: MainPresenterBase
+    override lateinit var presenter: IMainPresenter
 
     private lateinit var fabView: FloatingActionButton
     private lateinit var recyclerView: RecyclerView
@@ -47,6 +48,28 @@ class MainFragment : Fragment(), MainViewBase,
 
         recyclerView = view.findViewById(R.id.recycler)
         recyclerView.adapter = TicketsAdapter(tickets)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result != null) {
+            view!!.post {
+                presenter.scanTicket(result.contents)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.onStart()
+    }
+
+    override fun onStop() {
+        presenter.onStop()
+        super.onStop()
     }
 
     override fun onClick(view: View) {

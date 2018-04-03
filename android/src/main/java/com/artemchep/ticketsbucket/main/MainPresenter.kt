@@ -1,14 +1,16 @@
 package com.artemchep.ticketsbucket.main
 
 import android.util.Log
+import com.artemchep.ticketsbucket.codecs.ua.UkrQrTicketCodec
 import com.artemchep.ticketsbucket.interfaces.IQrTicket
+import com.artemchep.ticketsbucket.models.QrTicket
 import com.google.firebase.firestore.*
 
 
 /**
  * @author Artem Chepurnoy
  */
-class MainPresenter : MainPresenterBase {
+class MainPresenter : IMainPresenter {
 
     companion object {
         private const val TAG = "MainPresenter"
@@ -18,7 +20,7 @@ class MainPresenter : MainPresenterBase {
 
     private val collection: CollectionReference by lazy {
         val firestore = FirebaseFirestore.getInstance()
-        firestore.collection("")
+        firestore.collection("tickets")
     }
 
     private val listener = EventListener<QuerySnapshot> { value, e ->
@@ -28,12 +30,25 @@ class MainPresenter : MainPresenterBase {
         }
 
         val tickets = value.documents.map {
-            object : IQrTicket {}
+            object : IQrTicket {
+                override var firstName: String
+                    get() = "Artem"
+                    set(value) {}
+                override var lastName: String
+                    get() = "Chepurnoy"
+                    set(value) {}
+                override var departureDateTime: Long
+                    get() = 1600L
+                    set(value) {}
+                override var arrivalDateTime: Long
+                    get() = 1800L
+                    set(value) {}
+            }
         }
         processTickets(tickets)
     }
 
-    override var view: MainViewBase? = null
+    override var view: IMainView? = null
 
     override fun onStart() {
         val reg = collection.addSnapshotListener(listener)
@@ -57,6 +72,15 @@ class MainPresenter : MainPresenterBase {
 
     override fun scanTicket() {
         view!!.showTicketsScanner()
+    }
+
+    override fun scanTicket(contents: String) {
+        val map = mapOf(
+                Pair("firstName", "Artem"),
+                Pair("lastName", "Chepurnoy")
+        )
+
+        collection.document().set(map)
     }
 
 }

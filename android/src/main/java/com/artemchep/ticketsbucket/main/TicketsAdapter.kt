@@ -18,7 +18,7 @@ class TicketsAdapter(val tickets: MutableList<IQrTicket>) : RecyclerView.Adapter
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
     }
 
-    override fun getItemCount(): Int = 15
+    override fun getItemCount(): Int = tickets.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val inflater = LayoutInflater.from(parent.context)
