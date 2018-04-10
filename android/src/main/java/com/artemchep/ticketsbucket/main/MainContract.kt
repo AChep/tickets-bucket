@@ -24,4 +24,6 @@ interface IMainView : IView<IMainView, IMainPresenter> {
 
     fun showTicketsScanner()
 
+    fun showTicketScanError()
+
 }

@@ -3,6 +3,7 @@
     package="com.artemchep.ticketsbucket">
 
     <application
+        android:name=".Heart"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@android:drawable/arrow_up_float"
@@ -15,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ticket_details_qr.TicketDetailsQrActivity" />
     </application>
 
 </manifest>

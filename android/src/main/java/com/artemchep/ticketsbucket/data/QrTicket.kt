@@ -1,6 +1,7 @@
-package com.artemchep.ticketsbucket.models
+package com.artemchep.ticketsbucket.data
 
 import com.artemchep.ticketsbucket.interfaces.IQrTicket
+import java.io.Serializable
 
 /**
  * @author Artem Chepurnoy
@@ -10,5 +11,5 @@ data class QrTicket(
         override var lastName: String = "",
         override var departureDateTime: Long = 0L,
         override var arrivalDateTime: Long = 0L
-) : IQrTicket {
+) : IQrTicket, Serializable {
 }

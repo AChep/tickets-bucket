@@ -75,12 +75,15 @@ class MainPresenter : IMainPresenter {
     }
 
     override fun scanTicket(contents: String) {
-        val map = mapOf(
-                Pair("firstName", "Artem"),
-                Pair("lastName", "Chepurnoy")
-        )
+        val ticket = QrTicket()
+        val codec = UkrQrTicketCodec()
+        val succeed = codec.decode(contents, ticket)
 
-        collection.document().set(map)
+        if (!succeed) {
+            view?.showTicketScanError()
+            return
+        }
+
     }
 
 }

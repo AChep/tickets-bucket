@@ -15,6 +15,8 @@ interface ITicketDetailsQrPresenter : IPresenter<ITicketDetailsQrPresenter, ITic
  */
 interface ITicketDetailsQrView : IView<ITicketDetailsQrView, ITicketDetailsQrPresenter> {
 
-    fun showTicket(ticket: IQrTicket)
+    fun showQrCode(contents : String)
+
+    fun showCode(code : String)
 
 }

@@ -20,16 +20,20 @@ interface IPresenter<P : IPresenter<P, V>, V : IView<V, P>> {
      * Called every time the view starts, the view is guarantee to be not null starting at this
      * method, until [onStop] is called.
      */
-    fun onStart()
+    fun onStart() {
+    }
 
-    fun onResume()
+    fun onResume() {
+    }
 
-    fun onPause()
+    fun onPause() {
+    }
 
     /**
      * Called every time the view stops.
      * After this method, the view may be null.
      */
-    fun onStop()
+    fun onStop() {
+    }
 
 }
