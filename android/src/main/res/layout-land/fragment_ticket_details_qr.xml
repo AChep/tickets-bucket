@@ -6,10 +6,10 @@
 
     <com.artemchep.ticketsbucket.widgets.QrCodeView
         android:id="@+id/qrCodeView"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -18,26 +18,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:text="000B380B-C0EAEC2F-0001"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="?android:textColorPrimary"
         android:typeface="monospace"
-        app:layout_constraintEnd_toEndOf="@id/qrCodeView"
-        app:layout_constraintStart_toStartOf="@id/qrCodeView"
-        app:layout_constraintTop_toBottomOf="@id/qrCodeView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/qrCodeView"
+        app:layout_constraintTop_toBottomOf="@id/routeTextView" />
 
     <TextView
         android:id="@+id/routeTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:gravity="center_horizontal"
         android:text="Киев Пассажирский - Днепропетровск Главный"
         android:textAppearance="?android:textAppearanceLarge"
         android:fontFamily="sans-serif-light"
-        app:layout_constraintEnd_toEndOf="@id/qrCodeView"
-        app:layout_constraintStart_toStartOf="@id/qrCodeView"
-        app:layout_constraintBottom_toTopOf="@id/qrCodeView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/qrCodeView"
+        app:layout_constraintTop_toTopOf="@id/qrCodeView" />
 
 </android.support.constraint.ConstraintLayout>

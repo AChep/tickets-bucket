@@ -1,6 +1,6 @@
 package com.artemchep.ticketsbucket.codecs.ua
 
-import com.artemchep.ticketsbucket.interfaces.IQrTicket
+import com.artemchep.ticketsbucket.data.IQrTicket
 import com.artemchep.ticketsbucket.interfaces.IQrTicketCodec
 
 /**
@@ -38,9 +38,7 @@ class UkrQrTicketCodec : IQrTicketCodec<IQrTicket> {
 
     }
 
-    override fun encode(ticket: IQrTicket): String {
-        TODO("not implemented")
-    }
+    override fun encode(ticket: IQrTicket): String  = "sdfsdf"
 
     override fun decode(content: String, ticket: IQrTicket): Boolean {
         val lines = content.split('\n')

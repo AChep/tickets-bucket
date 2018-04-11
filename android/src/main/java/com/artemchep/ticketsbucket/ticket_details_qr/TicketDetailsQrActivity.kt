@@ -5,8 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
 import com.artemchep.ticketsbucket.data.QrTicket
-import com.artemchep.ticketsbucket.interfaces.IQrTicket
+import com.artemchep.ticketsbucket.logic.TicketDetailsQrPresenter
 
 
 /**
@@ -38,7 +39,7 @@ class TicketDetailsQrActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val ticket = intent!!.getSerializableExtra(EXTRA_TICKET) as IQrTicket
+        val ticket = intent!!.getParcelableExtra(EXTRA_TICKET) as QrTicket
         presenter = TicketDetailsQrPresenter(ticket)
 
         super.onCreate(savedInstanceState)

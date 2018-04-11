@@ -1,7 +1,9 @@
-package com.artemchep.ticketsbucket.ticket_details_qr
+package com.artemchep.ticketsbucket.logic
 
 import com.artemchep.ticketsbucket.codecs.ua.UkrQrTicketCodec
-import com.artemchep.ticketsbucket.interfaces.IQrTicket
+import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
+import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrView
+import com.artemchep.ticketsbucket.data.IQrTicket
 
 /**
  * @author Artem Chepurnoy
@@ -20,7 +22,7 @@ class TicketDetailsQrPresenter(private val ticket: IQrTicket) : ITicketDetailsQr
 
     override fun onStart() {
         view!!.apply {
-            showCode(1.hashCode().toString())
+            showCode("000B380B-C0EAEC2F-0001")
             showQrCode(ticketContents)
         }
     }

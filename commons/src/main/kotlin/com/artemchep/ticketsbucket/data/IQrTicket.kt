@@ -1,4 +1,6 @@
-package com.artemchep.ticketsbucket.interfaces
+package com.artemchep.ticketsbucket.data
+
+import com.artemchep.ticketsbucket.interfaces.ISerialize
 
 /**
  * @author Artem Chepurnoy

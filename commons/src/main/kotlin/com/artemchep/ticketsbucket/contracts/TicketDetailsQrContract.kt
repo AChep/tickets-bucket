@@ -1,8 +1,7 @@
-package com.artemchep.ticketsbucket.ticket_details_qr
+package com.artemchep.ticketsbucket.contracts
 
 import com.artemchep.mvp.IPresenter
 import com.artemchep.mvp.IView
-import com.artemchep.ticketsbucket.interfaces.IQrTicket
 
 /**
  * @author Artem Chepurnoy

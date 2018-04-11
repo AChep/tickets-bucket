@@ -1,3 +1,4 @@
 include ':commons'
 include ':commons-jvm'
+include ':commons-android'
 include ':android'

@@ -1,5 +1,7 @@
 package com.artemchep.ticketsbucket.interfaces
 
+import com.artemchep.ticketsbucket.data.IQrTicket
+
 /**
  * @author Artem Chepurnoy
  */

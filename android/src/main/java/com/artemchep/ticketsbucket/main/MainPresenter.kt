@@ -2,8 +2,10 @@ package com.artemchep.ticketsbucket.main
 
 import android.util.Log
 import com.artemchep.ticketsbucket.codecs.ua.UkrQrTicketCodec
-import com.artemchep.ticketsbucket.interfaces.IQrTicket
-import com.artemchep.ticketsbucket.models.QrTicket
+import com.artemchep.ticketsbucket.contracts.IMainPresenter
+import com.artemchep.ticketsbucket.contracts.IMainView
+import com.artemchep.ticketsbucket.data.QrTicket
+import com.artemchep.ticketsbucket.data.IQrTicket
 import com.google.firebase.firestore.*
 
 
@@ -30,20 +32,9 @@ class MainPresenter : IMainPresenter {
         }
 
         val tickets = value.documents.map {
-            object : IQrTicket {
-                override var firstName: String
-                    get() = "Artem"
-                    set(value) {}
-                override var lastName: String
-                    get() = "Chepurnoy"
-                    set(value) {}
-                override var departureDateTime: Long
-                    get() = 1600L
-                    set(value) {}
-                override var arrivalDateTime: Long
-                    get() = 1800L
-                    set(value) {}
-            }
+            QrTicket(
+                    firstName = "Artem Chepurnoy"
+            )
         }
         processTickets(tickets)
     }
@@ -84,6 +75,10 @@ class MainPresenter : IMainPresenter {
             return
         }
 
+    }
+
+    override fun navigateToTicketDetailsQr(ticket: IQrTicket) {
+        view!!.showTicketDetailsQr(ticket)
     }
 
 }
