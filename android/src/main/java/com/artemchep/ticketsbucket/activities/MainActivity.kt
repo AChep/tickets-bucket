@@ -1,7 +1,9 @@
-package com.artemchep.ticketsbucket.main
+package com.artemchep.ticketsbucket.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.artemchep.ticketsbucket.main.MainPresenter
+import com.artemchep.ticketsbucket.view.fragments.MainFragment
 
 /**
  * @author Artem Chepurnoy

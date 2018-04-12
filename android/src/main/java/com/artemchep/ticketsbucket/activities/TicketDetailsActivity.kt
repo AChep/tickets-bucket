@@ -1,4 +1,4 @@
-package com.artemchep.ticketsbucket.ticket_details
+package com.artemchep.ticketsbucket.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

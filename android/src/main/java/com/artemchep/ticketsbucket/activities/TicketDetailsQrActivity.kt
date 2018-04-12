@@ -1,4 +1,4 @@
-package com.artemchep.ticketsbucket.ticket_details_qr
+package com.artemchep.ticketsbucket.activities
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.View
 import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
 import com.artemchep.ticketsbucket.data.QrTicket
 import com.artemchep.ticketsbucket.logic.TicketDetailsQrPresenter
+import com.artemchep.ticketsbucket.view.fragments.TicketDetailsQrFragment
 
 
 /**

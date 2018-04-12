@@ -1,4 +1,4 @@
-package com.artemchep.ticketsbucket.ticket_details_qr
+package com.artemchep.ticketsbucket.view.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import com.artemchep.ticketsbucket.R
 import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
 import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrView
+import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
 import kotlinx.android.synthetic.main.fragment_ticket_details_qr.*
 
 /**
  * @author Artem Chepurnoy
  */
-class TicketDetailsQrFragment : Fragment(), ITicketDetailsQrView {
+class TicketDetailsQrFragment : FragmentBase<ITicketDetailsQrPresenter>(), ITicketDetailsQrView {
 
     override lateinit var presenter: ITicketDetailsQrPresenter
 
@@ -21,11 +22,6 @@ class TicketDetailsQrFragment : Fragment(), ITicketDetailsQrView {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_ticket_details_qr, container, false)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        presenter.onStart()
     }
 
     override fun showQrCode(contents: String) {

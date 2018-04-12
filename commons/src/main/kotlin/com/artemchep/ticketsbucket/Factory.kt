@@ -1,4 +1,6 @@
-package com.artemchep.ticketsbucket.data
+package com.artemchep.ticketsbucket
+
+import com.artemchep.ticketsbucket.data.IQrTicket
 
 /**
  * Platform-independent factory for models. This class should be removed once Kotlin

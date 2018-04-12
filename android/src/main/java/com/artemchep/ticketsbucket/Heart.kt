@@ -1,8 +1,6 @@
 package com.artemchep.ticketsbucket
 
 import android.app.Application
-import com.artemchep.ticketsbucket.data.Factory
-import com.artemchep.ticketsbucket.data.FactoryAndroid
 
 /**
  * @author Artem Chepurnoy
@@ -11,6 +9,9 @@ class Heart : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        val holderAndroid = HolderAndroid()
+        Holder.inject(holderAndroid)
 
         /*
          * Use Android-specific parcelable models

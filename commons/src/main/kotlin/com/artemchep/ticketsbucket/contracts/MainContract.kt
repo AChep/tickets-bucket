@@ -13,11 +13,15 @@ interface IMainPresenter : IPresenter<IMainPresenter, IMainView> {
 
     fun scanTicket(contents: String)
 
+    fun archiveTicket(ticket: IQrTicket)
+
     /**
      * Navigates to ticket's QR-code view of
      * details screen.
      */
     fun navigateToTicketDetailsQr(ticket: IQrTicket)
+
+    fun navigateToAbout()
 
 }
 
@@ -33,5 +37,7 @@ interface IMainView : IView<IMainView, IMainPresenter> {
     fun showTicketScanError()
 
     fun showTicketDetailsQr(ticket : IQrTicket)
+
+    fun showAbout()
 
 }

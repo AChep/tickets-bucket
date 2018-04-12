@@ -1,10 +1,10 @@
-package com.artemchep.ticketsbucket.main
+package com.artemchep.ticketsbucket.view.fragments
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
+import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
@@ -15,12 +15,12 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.artemchep.ticketsbucket.R
 import com.artemchep.ticketsbucket.contracts.IMainPresenter
 import com.artemchep.ticketsbucket.contracts.IMainView
-import com.artemchep.ticketsbucket.data.QrTicket
 import com.artemchep.ticketsbucket.data.IQrTicket
-import com.artemchep.ticketsbucket.ticket_details_qr.TicketDetailsQrActivity
+import com.artemchep.ticketsbucket.data.QrTicket
+import com.artemchep.ticketsbucket.activities.TicketDetailsQrActivity
 import com.artemchep.ticketsbucket.view.adapters.TicketsAdapter
+import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
 import com.artemchep.ticketsbucket.view.interfaces.OnItemClickListener
-import com.artemchep.ticketsbucket.widgets.QrCodeView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.fragment_passengers.*
@@ -28,9 +28,14 @@ import kotlinx.android.synthetic.main.fragment_passengers.*
 /**
  * @author Artem Chepurnoy
  */
-class MainFragment : Fragment(), IMainView,
+class MainFragment : FragmentBase<IMainPresenter>(), IMainView,
         View.OnClickListener,
-        Toolbar.OnMenuItemClickListener, OnItemClickListener<IQrTicket> {
+        OnItemClickListener<IQrTicket>,
+        Toolbar.OnMenuItemClickListener {
+
+    companion object {
+        private const val GE = 1
+    }
 
     private val tickets = ArrayList<IQrTicket>()
 
@@ -44,8 +49,6 @@ class MainFragment : Fragment(), IMainView,
             savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_passengers, container, false)
     }
-
-    private lateinit var qrCodeVide: QrCodeView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,11 +64,6 @@ class MainFragment : Fragment(), IMainView,
         recyclerView.adapter = TicketsAdapter(tickets).apply {
             onItemClickListener = this@MainFragment
         }
-
-        qrCodeVide = QrCodeView(context!!).apply {
-            setBackgroundColor(Color.RED)
-        }
-        (view as ViewGroup).addView(qrCodeVide, ViewGroup.LayoutParams(512, 512))
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -80,16 +78,6 @@ class MainFragment : Fragment(), IMainView,
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        presenter.onStart()
-    }
-
-    override fun onStop() {
-        presenter.onStop()
-        super.onStop()
-    }
-
     override fun onClick(view: View) {
         when (view.id) {
             R.id.fab -> presenter.scanTicket()
@@ -97,15 +85,37 @@ class MainFragment : Fragment(), IMainView,
     }
 
     override fun onItemClick(view: View, data: IQrTicket) {
-        presenter.navigateToTicketDetailsQr(data)
+        when (view.id) {
+            R.id.actionQrBtn -> presenter.navigateToTicketDetailsQr(data)
+            R.id.actionMoreBtn -> {
+                val items = listOf(
+                        Pair(GE, "Move to archive")
+                )
+
+                PopupMenu(context!!, view).apply {
+                    // Add options of a ticket
+                    items.forEach {
+                        menu.add(0, it.first, 0, it.second)
+                    }
+
+                    setOnMenuItemClickListener {
+                        performTicketMoreClick(data, it.itemId)
+                        return@setOnMenuItemClickListener true
+                    }
+                }.show()
+            }
+        }
+    }
+
+    private fun performTicketMoreClick(ticket: IQrTicket, action: Int) {
+        when (action) {
+            GE -> presenter.archiveTicket(ticket)
+        }
     }
 
     override fun onMenuItemClick(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_about -> {
-            }
-            R.id.action_support -> {
-            }
+            R.id.action_about -> presenter.navigateToAbout()
             else -> return false
         }
         return true
@@ -138,6 +148,9 @@ class MainFragment : Fragment(), IMainView,
     override fun showTicketDetailsQr(ticket: IQrTicket) {
         val intent = TicketDetailsQrActivity.newIntent(context!!, ticket as QrTicket)
         startActivity(intent)
+    }
+
+    override fun showAbout() {
     }
 
 }

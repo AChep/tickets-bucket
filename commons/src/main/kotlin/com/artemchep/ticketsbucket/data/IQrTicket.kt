@@ -14,6 +14,8 @@ interface IQrTicket : ISerialize {
         private const val KEY_ARRIVAL_DATETIME = "arrival_datetime"
     }
 
+    var key: String
+
     var firstName: String
     var lastName: String
 

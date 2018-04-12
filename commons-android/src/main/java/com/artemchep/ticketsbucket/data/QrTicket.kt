@@ -8,6 +8,7 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class QrTicket(
+        override var key: String = "",
         override var firstName: String = "",
         override var lastName: String = "",
         override var departureDateTime: Long = 0L,

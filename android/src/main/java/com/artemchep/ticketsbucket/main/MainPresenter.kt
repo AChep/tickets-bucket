@@ -77,8 +77,15 @@ class MainPresenter : IMainPresenter {
 
     }
 
+    override fun archiveTicket(ticket: IQrTicket) {
+    }
+
     override fun navigateToTicketDetailsQr(ticket: IQrTicket) {
         view!!.showTicketDetailsQr(ticket)
+    }
+
+    override fun navigateToAbout() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 }

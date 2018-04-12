@@ -9,14 +9,16 @@
         android:icon="@android:drawable/arrow_up_float"
         android:label="Tickets Bucket"
         android:theme="@style/AppThemeLight.NoActionBar">
-        <activity android:name=".main.MainActivity">
+        <activity android:name="com.artemchep.ticketsbucket.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ticket_details_qr.TicketDetailsQrActivity" />
+        <activity android:name=".activities.AboutActivity" />
+        <activity android:name=".activities.TicketDetailsActivity" />
+        <activity android:name=".activities.TicketDetailsQrActivity" />
     </application>
 
 </manifest>

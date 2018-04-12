@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--
     <item
         android:id="@+id/action_support"
         android:icon="@drawable/ic_card_giftcard"
@@ -13,6 +14,7 @@
         android:icon="@drawable/ic_archive"
         android:title="@string/action_archive"
         app:showAsAction="ifRoom" />
+    -->
 
     <item
         android:id="@+id/action_about"
