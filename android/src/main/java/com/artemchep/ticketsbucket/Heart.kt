@@ -10,15 +10,8 @@ class Heart : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val holderAndroid = HolderAndroid()
-        Holder.inject(holderAndroid)
-
-        /*
-         * Use Android-specific parcelable models
-         * for better performance.
-         */
-        val factoryAndroid = FactoryAndroid()
-        Factory.inject(factoryAndroid)
+        val android = Android()
+        CrossPlatform.inject(android)
     }
 
 }

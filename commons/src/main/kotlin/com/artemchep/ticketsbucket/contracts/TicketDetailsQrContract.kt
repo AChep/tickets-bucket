@@ -2,7 +2,7 @@ package com.artemchep.ticketsbucket.contracts
 
 import com.artemchep.mvp.IPresenter
 import com.artemchep.mvp.IView
-import com.artemchep.ticketsbucket.expect.CrossDrawable
+import com.artemchep.ticketsbucket.expect.IFigure
 
 /**
  * @author Artem Chepurnoy
@@ -17,7 +17,7 @@ interface ITicketDetailsQrView : IView<ITicketDetailsQrView, ITicketDetailsQrPre
 
     fun setLoadingIndicatorShown(isShown: Boolean)
 
-    fun showQrCode(drawable: CrossDrawable?)
+    fun showQrCode(figure: IFigure?)
 
     fun showCode(code: String)
 

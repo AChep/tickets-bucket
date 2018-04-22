@@ -1,15 +1,17 @@
 package com.artemchep.ticketsbucket.view.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import com.artemchep.ticketsbucket.R
 import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
 import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrView
+import com.artemchep.ticketsbucket.expect.IFigure
+import com.artemchep.ticketsbucket.expect.platformDependent
 import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
-import kotlinx.android.synthetic.main.fragment_ticket_details_qr.*
 
 /**
  * @author Artem Chepurnoy
@@ -18,14 +20,26 @@ class TicketDetailsQrFragment : FragmentBase<ITicketDetailsQrPresenter>(), ITick
 
     override lateinit var presenter: ITicketDetailsQrPresenter
 
+    private lateinit var qrImageView: ImageView
+    private lateinit var codeTextView: TextView
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_ticket_details_qr, container, false)
     }
 
-    override fun showQrCode(contents: String) {
-        qrCodeView.contents = contents
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        qrImageView = view.findViewById(R.id.qrCodeView)
+        codeTextView = view.findViewById(R.id.codeTextView)
+    }
+
+    override fun setLoadingIndicatorShown(isShown: Boolean) {
+    }
+
+    override fun showQrCode(figure: IFigure?) {
+        qrImageView.setImageBitmap(figure?.platformDependent()?.bitmap)
     }
 
     override fun showCode(code: String) {

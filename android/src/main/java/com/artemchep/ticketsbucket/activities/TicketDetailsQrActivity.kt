@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
-import com.artemchep.ticketsbucket.data.QrTicket
 import com.artemchep.ticketsbucket.logic.TicketDetailsQrPresenter
 import com.artemchep.ticketsbucket.view.fragments.TicketDetailsQrFragment
 

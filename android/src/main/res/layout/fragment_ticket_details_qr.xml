@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.artemchep.ticketsbucket.widgets.QrCodeView
+    <ImageView
         android:id="@+id/qrCodeView"
         android:layout_width="320dp"
         android:layout_height="320dp"

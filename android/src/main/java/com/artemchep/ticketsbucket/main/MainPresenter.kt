@@ -4,7 +4,6 @@ import android.util.Log
 import com.artemchep.ticketsbucket.codecs.ua.UkrQrTicketCodec
 import com.artemchep.ticketsbucket.contracts.IMainPresenter
 import com.artemchep.ticketsbucket.contracts.IMainView
-import com.artemchep.ticketsbucket.data.QrTicket
 import com.artemchep.ticketsbucket.data.IQrTicket
 import com.google.firebase.firestore.*
 
@@ -31,7 +30,7 @@ class MainPresenter : IMainPresenter {
             return@EventListener
         }
 
-        val tickets = value.documents.map {
+        val tickets = value!!.documents.map {
             QrTicket(
                     firstName = "Artem Chepurnoy"
             )

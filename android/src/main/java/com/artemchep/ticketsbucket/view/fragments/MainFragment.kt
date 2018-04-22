@@ -3,7 +3,6 @@ package com.artemchep.ticketsbucket.view.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
-import android.support.v4.app.Fragment
 import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
@@ -16,7 +15,6 @@ import com.artemchep.ticketsbucket.R
 import com.artemchep.ticketsbucket.contracts.IMainPresenter
 import com.artemchep.ticketsbucket.contracts.IMainView
 import com.artemchep.ticketsbucket.data.IQrTicket
-import com.artemchep.ticketsbucket.data.QrTicket
 import com.artemchep.ticketsbucket.activities.TicketDetailsQrActivity
 import com.artemchep.ticketsbucket.view.adapters.TicketsAdapter
 import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
