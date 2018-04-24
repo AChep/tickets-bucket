@@ -1,8 +1,8 @@
-package com.artemchep.ticketsbucket.contracts
+package com.artemchep.ticketsbucket2.contracts
 
 import com.artemchep.mvp.IPresenter
 import com.artemchep.mvp.IView
-import com.artemchep.ticketsbucket.expect.IFigure
+import com.artemchep.ticketsbucket2.expect.IFigure
 
 /**
  * @author Artem Chepurnoy

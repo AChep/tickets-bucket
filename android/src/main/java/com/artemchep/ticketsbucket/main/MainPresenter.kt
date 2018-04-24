@@ -1,10 +1,11 @@
 package com.artemchep.ticketsbucket.main
 
 import android.util.Log
-import com.artemchep.ticketsbucket.codecs.ua.UkrQrTicketCodec
-import com.artemchep.ticketsbucket.contracts.IMainPresenter
-import com.artemchep.ticketsbucket.contracts.IMainView
-import com.artemchep.ticketsbucket.data.IQrTicket
+import com.artemchep.ticketsbucket2.codecs.ua.UkrQrTicketCodec
+import com.artemchep.ticketsbucket2.contracts.IMainPresenter
+import com.artemchep.ticketsbucket2.contracts.IMainView
+import com.artemchep.ticketsbucket2.data.IQrTicket
+import com.artemchep.ticketsbucket.data.QrTicket
 import com.google.firebase.firestore.*
 
 

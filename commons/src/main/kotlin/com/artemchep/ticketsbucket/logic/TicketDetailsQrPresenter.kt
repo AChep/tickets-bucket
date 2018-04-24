@@ -1,11 +1,11 @@
-package com.artemchep.ticketsbucket.logic
+package com.artemchep.ticketsbucket2.logic
 
-import com.artemchep.ticketsbucket.CrossPlatform
-import com.artemchep.ticketsbucket.codecs.ua.UkrQrTicketCodec
-import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
-import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrView
-import com.artemchep.ticketsbucket.data.IQrTicket
-import com.artemchep.ticketsbucket.expect.IFigure
+import com.artemchep.ticketsbucket2.CrossPlatform
+import com.artemchep.ticketsbucket2.codecs.ua.UkrQrTicketCodec
+import com.artemchep.ticketsbucket2.contracts.ITicketDetailsQrPresenter
+import com.artemchep.ticketsbucket2.contracts.ITicketDetailsQrView
+import com.artemchep.ticketsbucket2.data.IQrTicket
+import com.artemchep.ticketsbucket2.expect.IFigure
 //import kotlinx.coroutines.experimental.Job
 //import kotlinx.coroutines.experimental.async
 //import kotlinx.coroutines.experimental.launch

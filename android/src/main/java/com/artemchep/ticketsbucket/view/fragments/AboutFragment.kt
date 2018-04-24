@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.artemchep.ticketsbucket.R
-import com.artemchep.ticketsbucket.contracts.IAboutPresenter
-import com.artemchep.ticketsbucket.contracts.IAboutView
-import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
-import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrView
+import com.artemchep.ticketsbucket2.contracts.IAboutPresenter
+import com.artemchep.ticketsbucket2.contracts.IAboutView
+import com.artemchep.ticketsbucket2.contracts.ITicketDetailsQrPresenter
+import com.artemchep.ticketsbucket2.contracts.ITicketDetailsQrView
 import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
 import kotlinx.android.synthetic.main.fragment_ticket_details_qr.*
 

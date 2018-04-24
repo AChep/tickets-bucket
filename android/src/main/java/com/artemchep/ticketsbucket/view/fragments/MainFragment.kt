@@ -12,15 +12,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.afollestad.materialdialogs.MaterialDialog
 import com.artemchep.ticketsbucket.R
-import com.artemchep.ticketsbucket.contracts.IMainPresenter
-import com.artemchep.ticketsbucket.contracts.IMainView
-import com.artemchep.ticketsbucket.data.IQrTicket
+import com.artemchep.ticketsbucket2.contracts.IMainPresenter
+import com.artemchep.ticketsbucket2.contracts.IMainView
+import com.artemchep.ticketsbucket2.data.IQrTicket
 import com.artemchep.ticketsbucket.activities.TicketDetailsQrActivity
+import com.artemchep.ticketsbucket.data.QrTicket
 import com.artemchep.ticketsbucket.view.adapters.TicketsAdapter
 import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
 import com.artemchep.ticketsbucket.view.interfaces.OnItemClickListener
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.integration.android.IntentIntegrator
+//import com.google.zxing.BarcodeFormat
+//import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.fragment_passengers.*
 
 /**
@@ -65,7 +66,7 @@ class MainFragment : FragmentBase<IMainPresenter>(), IMainView,
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        /*
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
             view!!.post {
@@ -73,7 +74,7 @@ class MainFragment : FragmentBase<IMainPresenter>(), IMainView,
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
-        }
+        }*/
     }
 
     override fun onClick(view: View) {
@@ -129,12 +130,14 @@ class MainFragment : FragmentBase<IMainPresenter>(), IMainView,
     }
 
     override fun showTicketsScanner() {
+        /*
         IntentIntegrator
                 .forSupportFragment(this)
                 .setBarcodeImageEnabled(false)
                 .setOrientationLocked(false)
                 .setDesiredBarcodeFormats(BarcodeFormat.QR_CODE.name)
                 .initiateScan()
+                */
     }
 
     override fun showTicketScanError() {

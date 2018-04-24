@@ -1,7 +1,7 @@
-package com.artemchep.ticketsbucket
+package com.artemchep.ticketsbucket2
 
-import com.artemchep.ticketsbucket.data.IQrTicket
-import com.artemchep.ticketsbucket.expect.IQrGenerator
+import com.artemchep.ticketsbucket2.data.IQrTicket
+import com.artemchep.ticketsbucket2.expect.IQrGenerator
 //import kotlin.coroutines.experimental.CoroutineContext
 
 /**

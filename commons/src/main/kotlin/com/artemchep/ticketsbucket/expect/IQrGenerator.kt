@@ -1,4 +1,4 @@
-package com.artemchep.ticketsbucket.expect
+package com.artemchep.ticketsbucket2.expect
 
 /**
  * @author Artem Chepurnoy

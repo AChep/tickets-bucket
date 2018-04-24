@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.artemchep.ticketsbucket.R
-import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrPresenter
-import com.artemchep.ticketsbucket.contracts.ITicketDetailsQrView
-import com.artemchep.ticketsbucket.expect.IFigure
+import com.artemchep.ticketsbucket2.contracts.ITicketDetailsQrPresenter
+import com.artemchep.ticketsbucket2.contracts.ITicketDetailsQrView
+import com.artemchep.ticketsbucket2.expect.IFigure
 import com.artemchep.ticketsbucket.expect.platformDependent
 import com.artemchep.ticketsbucket.view.fragments.base.FragmentBase
 
@@ -39,7 +39,7 @@ class TicketDetailsQrFragment : FragmentBase<ITicketDetailsQrPresenter>(), ITick
     }
 
     override fun showQrCode(figure: IFigure?) {
-        qrImageView.setImageBitmap(figure?.platformDependent()?.bitmap)
+//        qrImageView.setImageBitmap(figure?.platformDependent()?.bitmap)
     }
 
     override fun showCode(code: String) {

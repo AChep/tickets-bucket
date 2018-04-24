@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.artemchep.ticketsbucket.R
-import com.artemchep.ticketsbucket.data.IQrTicket
+import com.artemchep.ticketsbucket2.data.IQrTicket
 import com.artemchep.ticketsbucket.view.interfaces.OnItemClickListener
 
 /**

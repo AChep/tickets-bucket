@@ -1,7 +1,7 @@
-package com.artemchep.ticketsbucket.codecs.ua
+package com.artemchep.ticketsbucket2.codecs.ua
 
-import com.artemchep.ticketsbucket.data.IQrTicket
-import com.artemchep.ticketsbucket.interfaces.IQrTicketCodec
+import com.artemchep.ticketsbucket2.data.IQrTicket
+import com.artemchep.ticketsbucket2.interfaces.IQrTicketCodec
 
 /**
  * @author Artem Chepurnoy

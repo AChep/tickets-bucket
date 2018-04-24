@@ -1,6 +1,8 @@
 package com.artemchep.ticketsbucket.expect
 
 import android.graphics.Bitmap
+import com.artemchep.ticketsbucket2.expect.IFigure
+import com.artemchep.ticketsbucket2.expect.IQrGenerator
 import java.util.*
 
 /**

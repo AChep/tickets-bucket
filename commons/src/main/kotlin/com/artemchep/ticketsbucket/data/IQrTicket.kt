@@ -1,4 +1,4 @@
-package com.artemchep.ticketsbucket.data
+package com.artemchep.ticketsbucket2.data
 
 /**
  * @author Artem Chepurnoy

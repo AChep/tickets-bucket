@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-platform-android'
 
 apply plugin: 'kotlin-android-extensions'
 
@@ -20,6 +20,9 @@ android {
 
         consumerProguardFiles 'proguard-rules.pro'
     }
+//    packagingOptions {
+//        pickFirst 'META-INF/main.kotlin_module'
+//    }
 }
 
 androidExtensions {
@@ -33,9 +36,9 @@ kotlin {
 }
 
 dependencies {
-    implementation project(":commons-android")
+    expectedBy project(":commons")
 
-    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+//    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 
     implementation "com.android.support:appcompat-v7:$support_lib_version"
