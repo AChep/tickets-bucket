@@ -6,7 +6,7 @@ import com.artemchep.mvp.IPresenter
 /**
  * @author Artem Chepurnoy
  */
-abstract class FragmentBase<P : IPresenter<*, *>> : Fragment() {
+abstract class FragmentBase<P : IPresenter<*>> : Fragment() {
 
     abstract var presenter: P
 

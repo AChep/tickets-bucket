@@ -3,6 +3,8 @@ package com.artemchep.ticketsbucket.expect
 import android.graphics.Bitmap
 import com.artemchep.ticketsbucket2.expect.IFigure
 import com.artemchep.ticketsbucket2.expect.IQrGenerator
+import com.google.zxing.BarcodeFormat
+import com.journeyapps.barcodescanner.BarcodeEncoder
 import java.util.*
 
 /**
@@ -16,13 +18,11 @@ class QrGenerator : IQrGenerator {
 
     override fun makeFor(contents: String, size: Int): IFigure {
         val bitmap = sCacheMap[contents]?.takeIf { it.width >= size }
-                ?: Bitmap
-                        .createBitmap(size, size, Bitmap.Config.ARGB_8888)
+                ?: BarcodeEncoder()
+                        .encodeBitmap(contents, BarcodeFormat.QR_CODE, size, size)
                         .also {
                             sCacheMap[contents] = it
                         }
-
-        Thread.sleep(2000)
 
         return Figure(bitmap)
     }

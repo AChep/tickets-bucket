@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import com.artemchep.mvp.IPresenter
 import java.util.*
 
-private typealias PresenterMap = Map<String, IPresenter<*, *>>
+private typealias PresenterMap = Map<String, IPresenter<*>>
 
 /**
  * @author Artem Chepurnoy

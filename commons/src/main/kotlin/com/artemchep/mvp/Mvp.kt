@@ -3,7 +3,7 @@ package com.artemchep.mvp
 /**
  * @author Artem Chepurnoy
  */
-interface IView<V : IView<V, P>, P : IPresenter<P, V>> {
+interface IView<V : IViewApi, P : IPresenter<V>> {
 
     var presenter: P
 
@@ -12,12 +12,18 @@ interface IView<V : IView<V, P>, P : IPresenter<P, V>> {
 /**
  * @author Artem Chepurnoy
  */
-interface IPresenter<P : IPresenter<P, V>, V : IView<V, P>> {
+interface IViewApi {
+}
 
-    var view: V?
+/**
+ * @author Artem Chepurnoy
+ */
+interface IPresenter<A : IViewApi> {
+
+    var view: A?
 
     /**
-     * Called every time the view starts, the view is guarantee to be not null starting at this
+     * Called every time the view starts, the view is guaranteed to be not null starting at this
      * method, until [onStop] is called.
      */
     fun onStart() {

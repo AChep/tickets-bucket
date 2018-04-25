@@ -13,6 +13,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/qrCodeProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/qrCodeView"
+        app:layout_constraintEnd_toEndOf="@id/qrCodeView"
+        app:layout_constraintStart_toStartOf="@id/qrCodeView"
+        app:layout_constraintTop_toTopOf="@id/qrCodeView" />
+
     <TextView
         android:id="@+id/codeTextView"
         android:layout_width="0dp"
@@ -32,12 +41,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:text="Киев Пассажирский - Днепропетровск Главный"
         android:textAppearance="?android:textAppearanceLarge"
-        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toTopOf="@id/qrCodeView"
         app:layout_constraintEnd_toEndOf="@id/qrCodeView"
-        app:layout_constraintStart_toStartOf="@id/qrCodeView"
-        app:layout_constraintBottom_toTopOf="@id/qrCodeView" />
+        app:layout_constraintStart_toStartOf="@id/qrCodeView" />
 
 </android.support.constraint.ConstraintLayout>

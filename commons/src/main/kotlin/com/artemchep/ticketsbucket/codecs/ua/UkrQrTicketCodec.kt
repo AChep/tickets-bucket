@@ -52,8 +52,8 @@ class UkrQrTicketCodec : IQrTicketCodec<IQrTicket> {
                 Err(4, { ticket.departureDateTime = it }, { parseDate(it) }),
                 Err(5, { ticket.arrivalDateTime = it }, { parseDate(it) }),
                 Err(9, {
-                    ticket.firstName = it.first
-                    ticket.lastName = it.second
+                    ticket.name = it.first
+                    ticket.name = it.second
                 }, { parsePair(it) })
         )
 

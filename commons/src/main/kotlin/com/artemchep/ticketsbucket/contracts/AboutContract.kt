@@ -2,16 +2,21 @@ package com.artemchep.ticketsbucket2.contracts
 
 import com.artemchep.mvp.IPresenter
 import com.artemchep.mvp.IView
-import com.artemchep.ticketsbucket2.data.IQrTicket
+import com.artemchep.mvp.IViewApi
 
 /**
  * @author Artem Chepurnoy
  */
-interface IAboutPresenter : IPresenter<IAboutPresenter, IAboutView> {
+interface IAboutPresenter : IPresenter<IAboutViewApi> {
 }
 
 /**
  * @author Artem Chepurnoy
  */
-interface IAboutView : IView<IAboutView, IAboutPresenter> {
+interface IAboutViewApi : IViewApi {
 }
+
+/**
+ * @author Artem Chepurnoy
+ */
+interface IAboutView : IView<IAboutViewApi, IAboutPresenter>, IAboutViewApi

@@ -7,8 +7,7 @@ interface IQrTicket {
 
     var key: String
 
-    var firstName: String
-    var lastName: String
+    var name: String
 
     /**
      * Date time of train

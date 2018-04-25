@@ -19,6 +19,7 @@ class TicketsAdapter(tickets: MutableList<IQrTicket>) : AdapterBase<IQrTicket, T
 
         init {
             view.apply {
+                setOnClickListener(this@Holder)
                 findViewById<View>(R.id.actionMoreBtn).setOnClickListener(this@Holder)
                 findViewById<View>(R.id.actionQrBtn).setOnClickListener(this@Holder)
             }

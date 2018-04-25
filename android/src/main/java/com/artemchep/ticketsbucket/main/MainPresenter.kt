@@ -6,6 +6,7 @@ import com.artemchep.ticketsbucket2.contracts.IMainPresenter
 import com.artemchep.ticketsbucket2.contracts.IMainView
 import com.artemchep.ticketsbucket2.data.IQrTicket
 import com.artemchep.ticketsbucket.data.QrTicket
+import com.artemchep.ticketsbucket2.contracts.IMainViewApi
 import com.google.firebase.firestore.*
 
 
@@ -33,13 +34,13 @@ class MainPresenter : IMainPresenter {
 
         val tickets = value!!.documents.map {
             QrTicket(
-                    firstName = "Artem Chepurnoy"
+                    name = "Artem Chepurnoy"
             )
         }
         processTickets(tickets)
     }
 
-    override var view: IMainView? = null
+    override var view: IMainViewApi? = null
 
     override fun onStart() {
         val reg = collection.addSnapshotListener(listener)
@@ -78,6 +79,10 @@ class MainPresenter : IMainPresenter {
     }
 
     override fun archiveTicket(ticket: IQrTicket) {
+    }
+
+    override fun navigateToTicketDetails(ticket: IQrTicket) {
+        view!!.showTicketDetails(ticket)
     }
 
     override fun navigateToTicketDetailsQr(ticket: IQrTicket) {

@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.afollestad.materialdialogs.MaterialDialog
 import com.artemchep.ticketsbucket.R
+import com.artemchep.ticketsbucket.activities.TicketDetailsActivity
 import com.artemchep.ticketsbucket2.contracts.IMainPresenter
 import com.artemchep.ticketsbucket2.contracts.IMainView
 import com.artemchep.ticketsbucket2.data.IQrTicket
@@ -103,6 +104,7 @@ class MainFragment : FragmentBase<IMainPresenter>(), IMainView,
                     }
                 }.show()
             }
+            else -> presenter.navigateToTicketDetails(data)
         }
     }
 
@@ -144,6 +146,11 @@ class MainFragment : FragmentBase<IMainPresenter>(), IMainView,
         MaterialDialog.Builder(context!!)
                 .title("Failed to scan a ticket")
                 .show()
+    }
+
+    override fun showTicketDetails(ticket: IQrTicket) {
+        val intent = TicketDetailsActivity.newIntent(context!!, ticket as QrTicket)
+        startActivity(intent)
     }
 
     override fun showTicketDetailsQr(ticket: IQrTicket) {

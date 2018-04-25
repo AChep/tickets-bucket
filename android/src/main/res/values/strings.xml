@@ -6,4 +6,6 @@
     <string name="action_archive">Archive</string>
     <string name="action_support">Support development</string>
 
+    <string name="route_failed">Can\'t load train route, try again later.</string>
+
 </resources>
